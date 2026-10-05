@@ -69,7 +69,7 @@ form.addEventListener('submit',async e=>{
  e.preventDefault(); results.style.display='none'; showStatus('Researching the address…');
  const address=document.getElementById('address').value.trim();
  try{
-  const g=new URL(GEOCODE); g.searchParams.set('SingleLine',address); g.searchParams.set('f','json'); g.searchParams.set('outFields','*'); g.searchParams.set('maxLocations','5');
+  const g=new URL(GEOCODE); g.searchParams.set('SingleLine',address); g.searchParams.set('f','json'); g.searchParams.set('outFields','*'); g.searchParams.set('outSR','3857'); g.searchParams.set('maxLocations','5');
   const gr=await fetch(g); if(!gr.ok) throw new Error('Geocoder unavailable'); const gj=await gr.json();
   const candidates=(gj.candidates||[]).filter(x=>x.score>=70);
   if(!candidates.length) throw new Error('No confident New Jersey address match was found. Try the full street address, town and NJ.');
@@ -80,8 +80,29 @@ form.addEventListener('submit',async e=>{
   p.searchParams.set('geometryType','esriGeometryPoint'); p.searchParams.set('inSR','3857'); p.searchParams.set('spatialRel','esriSpatialRelIntersects'); p.searchParams.set('distance','100'); p.searchParams.set('units','esriSRUnit_Meter'); p.searchParams.set('outFields','*'); p.searchParams.set('returnGeometry','false'); p.searchParams.set('resultRecordCount','5');
   const pr=await fetch(p); if(!pr.ok) throw new Error('Parcel service unavailable'); const pj=await pr.json();
   if(pj.error) throw new Error(pj.error.message||'Parcel query failed');
-  const f=pj.features?.[0]?.attributes;
-  if(!f) throw new Error('The address was found, but no statewide parcel record was returned.');
+  let f=pj.features?.[0]?.attributes;
+
+  // If the point-in-polygon query misses, use the NJ geocoder's
+  // block/lot attributes as a second way to locate the parcel.
+  if(!f){
+    const a=c.attributes||{};
+    const block=String(a.Addr_Block||'').trim();
+    const lot=String(a.Addr_Lot||'').trim();
+    if(block && lot){
+      const p2=new URL(PARCEL);
+      p2.searchParams.set('f','json');
+      p2.searchParams.set('where',`PCLBLOCK='${block.replace(/'/g,"''")}' AND PCLLOT='${lot.replace(/'/g,"''")}'`);
+      p2.searchParams.set('outFields','*');
+      p2.searchParams.set('returnGeometry','false');
+      p2.searchParams.set('resultRecordCount','5');
+      const pr2=await fetch(p2);
+      if(pr2.ok){
+        const pj2=await pr2.json();
+        if(!pj2.error) f=pj2.features?.[0]?.attributes;
+      }
+    }
+  }
+  if(!f) throw new Error('The address was found, but no statewide parcel record was returned. Try entering the full street address, town and NJ.');
   statusBox.style.display='none'; results.style.display='block';
   match.innerHTML='<p><b>Matched address</b><br>'+esc(c.address)+'</p><span class="badge">NJ statewide parcel</span><span class="badge">MOD-IV attributes</span>';
   const fields=[
