@@ -1,179 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Land2Homestead | Property Research & Homestead Planning</title>
-<meta name="description" content="Land2Homestead helps you research property before you buy and plan what your land can become.">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Land2Homestead | NJ Property Research</title>
+<meta name="description" content="Land2Homestead property research and homestead planning.">
 <style>
-:root{--ink:#17351f;--green:#2f6b45;--light:#f4f7f2;--cream:#fbfaf5;--gold:#c79b43;--muted:#66736a;--white:#fff;--border:#dce4dc}
-*{box-sizing:border-box}
-body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream);line-height:1.55}
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 6%;background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:5}
-.logo{font-weight:800;font-size:20px;letter-spacing:-.4px}.logo span{color:var(--green)}
-nav a{color:var(--ink);text-decoration:none;margin-left:22px;font-weight:600;font-size:14px}
-.hero{padding:78px 6% 70px;background:linear-gradient(135deg,#edf4eb,#fbfaf5)}
-.hero-inner{max-width:1050px;margin:auto}
-.eyebrow{color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:12px}
-h1{font-size:clamp(40px,7vw,72px);line-height:1.02;letter-spacing:-2.5px;margin:12px 0 20px;max-width:800px}
-.hero p{font-size:19px;max-width:680px;color:var(--muted)}
-.cta{display:inline-block;margin-top:16px;padding:14px 21px;border-radius:10px;background:var(--green);color:white;text-decoration:none;font-weight:800;border:0;cursor:pointer;font-size:16px}
-.section{padding:70px 6%}.wrap{max-width:1050px;margin:auto}
-h2{font-size:34px;letter-spacing:-1px;margin:0 0 12px}
-.sub{color:var(--muted);max-width:700px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
-.card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:25px;box-shadow:0 6px 20px rgba(23,53,31,.05)}
-.card h3{margin:8px 0}.icon{font-size:28px}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:30px}
-.step{padding:20px;background:var(--light);border-radius:14px}.num{font-weight:900;color:var(--green);font-size:14px}
-.intake{background:var(--ink);color:white;border-radius:20px;padding:34px;margin-top:35px}
-.intake p{color:#d8e3da}
-form{display:grid;gap:14px;margin-top:22px}
-label{font-weight:700;font-size:14px}
-input,select,textarea{width:100%;padding:13px;border-radius:9px;border:1px solid #cbd7cc;font:inherit;background:white;color:#17351f}
-textarea{min-height:110px;resize:vertical}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-button{font:inherit}
-.success{display:none;background:#e9f6eb;color:#17351f;border-radius:10px;padding:14px;margin-top:15px;font-weight:700}
-.saved{margin-top:25px;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--white);display:none}
-.saved h3{margin-top:0}
-.property-row{padding:12px 0;border-top:1px solid var(--border);font-size:14px}
-.small{font-size:13px;color:var(--muted)}
+:root{--ink:#17351f;--green:#2f6b45;--light:#f2f6f1;--cream:#fbfaf5;--muted:#657269;--border:#dce4dc;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream);line-height:1.5}
+nav{display:flex;justify-content:space-between;align-items:center;padding:17px 6%;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:5}.logo{font-size:20px;font-weight:850}.logo span{color:var(--green)}nav a{margin-left:18px;color:var(--ink);text-decoration:none;font-weight:650;font-size:14px}
+.hero{padding:68px 6%;background:linear-gradient(135deg,#edf4eb,#fbfaf5)}.wrap{max-width:1050px;margin:auto}h1{font-size:clamp(40px,7vw,68px);line-height:1.02;letter-spacing:-2.5px;max-width:820px;margin:10px 0 18px}.hero p{font-size:19px;color:var(--muted);max-width:720px}.eyebrow{color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:1.4px;font-size:12px}
+.section{padding:60px 6%}h2{font-size:32px;letter-spacing:-1px;margin:0 0 10px}.sub{color:var(--muted);max-width:720px}.card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px;margin-top:25px}
+form{display:grid;gap:14px}label{font-weight:750;font-size:14px}input,select,textarea{width:100%;padding:13px;border:1px solid #cbd7cc;border-radius:9px;font:inherit;background:white;color:var(--ink)}button{padding:14px 18px;border:0;border-radius:10px;background:var(--green);color:#fff;font-weight:800;font-size:16px;cursor:pointer}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.status{display:none;margin-top:15px;padding:14px;border-radius:10px;background:#eef6ee}.error{background:#fff0ed;color:#7a2e22}.results{display:none}.result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}.result{border:1px solid var(--border);border-radius:12px;padding:15px;background:#fff}.result b{display:block;font-size:12px;text-transform:uppercase;color:var(--muted);letter-spacing:.6px}.result strong{font-size:18px}.note{font-size:12px;color:var(--muted);margin-top:18px}.sources a{color:var(--green);font-weight:700}.badge{display:inline-block;padding:5px 8px;background:var(--light);border-radius:999px;font-size:12px;font-weight:750;margin:3px}
 footer{padding:35px 6%;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
-@media(max-width:760px){nav{padding:15px 5%}nav a{margin-left:10px}.hero{padding:58px 5%}.section{padding:55px 5%}.grid,.steps,.form-grid{grid-template-columns:1fr}h1{letter-spacing:-1.5px}}
+@media(max-width:700px){nav a{margin-left:8px}.grid,.result-grid{grid-template-columns:1fr}.hero{padding:55px 5%}.section{padding:48px 5%}}
 </style>
 </head>
 <body>
-<nav>
-  <div class="logo">Land<span>2</span>Homestead</div>
-  <div><a href="#services">Services</a><a href="#how">How It Works</a><a href="#start">Get Started</a></div>
-</nav>
+<nav><div class="logo">Land<span>2</span>Homestead</div><div><a href="#research">Research</a><a href="#about">About</a></div></nav>
 
-<section class="hero">
-<div class="hero-inner">
-<div class="eyebrow">Research before you buy</div>
+<section class="hero"><div class="wrap">
+<div class="eyebrow">NJ property research</div>
 <h1>Know what your land can become.</h1>
-<p>Land2Homestead helps future landowners research property, understand development considerations, and plan a realistic path from raw land to homestead.</p>
-<a class="cta" href="#start">Research a Property →</a>
-</div>
-</section>
+<p>Enter a New Jersey property and Land2Homestead will identify the likely parcel using New Jersey's public GIS services, then display available parcel and tax attributes.</p>
+</div></section>
 
-<section class="section" id="services">
-<div class="wrap">
-<h2>What we research</h2>
-<p class="sub">Start with the questions that matter before you spend money on a property.</p>
-<div class="grid">
-<div class="card"><div class="icon">🗺️</div><h3>Property Due Diligence</h3><p>Organize zoning, land-use, wetlands, flood-risk, utilities and other property considerations.</p></div>
-<div class="card"><div class="icon">🏡</div><h3>Home Feasibility</h3><p>Evaluate whether your home and site goals appear compatible with the property.</p></div>
-<div class="card"><div class="icon">🌱</div><h3>Homestead Planning</h3><p>Turn your property goals into a practical checklist for homes, gardens, animals, utilities and more.</p></div>
-</div>
-</div>
-</section>
+<section class="section" id="research"><div class="wrap">
+<h2>Research a property</h2>
+<p class="sub">This is the first live research module. It uses New Jersey's statewide geocoder and parcel/MOD-IV data. Results are informational and must be verified with the appropriate government authority.</p>
 
-<section class="section" id="how">
-<div class="wrap">
-<h2>How it works</h2>
-<p class="sub">This version adds a real property-request workflow while keeping the site free to host.</p>
-<div class="steps">
-<div class="step"><div class="num">01 — ENTER</div><b>Tell us about the property</b><p>Address, acreage and what you want to do there.</p></div>
-<div class="step"><div class="num">02 — SAVE</div><b>Your request is saved</b><p>Your browser keeps submitted properties so you can return to them.</p></div>
-<div class="step"><div class="num">03 — RESEARCH</div><b>Review the due-diligence items</b><p>Use the property record as your research checklist.</p></div>
-<div class="step"><div class="num">04 — REPORT</div><b>Build the feasibility report</b><p>Future versions will automate research and paid report delivery.</p></div>
-</div>
-</div>
-</section>
-
-<section class="section" id="start">
-<div class="wrap">
-<h2>Start a property file</h2>
-<p class="sub">Create a property record now. Nothing is sent anywhere yet; this free MVP stores it in your browser so we can build the next stage without a paid backend.</p>
-
-<div class="intake">
-<h2 style="color:white">Property intake</h2>
-<p>Enter one property at a time. You can save multiple properties on this device.</p>
-<form id="propertyForm">
-<div>
-<label for="address">Property address *</label>
-<input id="address" required placeholder="123 Main Street, Town, NJ">
-</div>
-<div class="form-grid">
-<div><label for="acres">Approximate acreage</label><input id="acres" type="number" min="0" step="0.01" placeholder="e.g. 6.21"></div>
-<div><label for="goal">Primary goal</label>
-<select id="goal">
-<option>Buy land for a homestead</option>
-<option>Build a home</option>
-<option>Start a small farm</option>
-<option>Recreational land</option>
-<option>Investment / resale</option>
-<option>Other</option>
-</select></div>
-</div>
-<div><label for="plans">What do you want to do on the property?</label>
-<textarea id="plans" placeholder="Example: 2-bedroom home, garden, chickens, blueberries, small farm stand..."></textarea></div>
-<button class="cta" type="submit">Save Property →</button>
-</form>
-<div class="success" id="success">✓ Property saved to this device.</div>
-</div>
-
-<div class="saved" id="saved">
-<h3>Saved properties</h3>
-<div id="propertyList"></div>
-<button class="cta" id="clearBtn" type="button" style="background:#6b3b3b;margin-top:12px">Clear saved properties</button>
-</div>
-</div>
-</section>
-
-<section class="section">
-<div class="wrap">
 <div class="card">
-<h2>Coming next: Land Feasibility Reports</h2>
-<p>A paid report can eventually combine property research into one organized decision-making document.</p>
-<p><b>Potential products:</b> Basic Property Check • Detailed Due-Diligence Report • Homestead Feasibility Package</p>
-<p class="small">Land2Homestead is a research and planning service, not legal advice. Always verify requirements with the applicable municipality, county, state and other authorities.</p>
+<form id="researchForm">
+<label for="address">New Jersey property address</label>
+<input id="address" required placeholder="Example: 5 Friendship Rd, Southampton, NJ">
+<button type="submit">Research Property →</button>
+</form>
+<div class="status" id="status"></div>
 </div>
-</div>
-</section>
 
-<footer><div class="wrap">© 2026 Land2Homestead · Property research & homestead planning · Free MVP</div></footer>
+<div class="card results" id="results">
+<h2>Property Research</h2>
+<div id="match"></div>
+<div class="result-grid" id="resultGrid"></div>
+<div class="note">NJ parcel boundaries are planning representations, not surveys or legal ownership determinations. Owner names may be redacted under Daniel's Law. Tax and deed fields reflect the statewide parcel dataset when available. citeturn1view0</div>
+<div class="sources" id="sources"></div>
+</div>
+</div></section>
+
+<section class="section" id="about"><div class="wrap"><div class="card">
+<h2>What we're building</h2>
+<p>This research module is the foundation for future Land2Homestead reports covering zoning, wetlands, flood risk, Pinelands status, soils, taxes, deeds, development considerations and homestead feasibility.</p>
+<p class="note">Land2Homestead is a research and planning service, not legal advice.</p>
+</div></div></section>
+
+<footer><div class="wrap">© 2026 Land2Homestead · NJ property research & homestead planning</div></footer>
 
 <script>
-const KEY='land2homestead_properties_v2';
-const form=document.getElementById('propertyForm');
-const success=document.getElementById('success');
-const saved=document.getElementById('saved');
-const list=document.getElementById('propertyList');
-const clearBtn=document.getElementById('clearBtn');
+const GEOCODE='https://geo.nj.gov/arcgis/rest/services/Tasks/NJ_Geocode/GeocodeServer/findAddressCandidates';
+const PARCEL='https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/ArcGIS/rest/services/Parcels_Composite_NJ_WM/FeatureServer/0/query';
 
-function getProperties(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return []}}
-function render(){
- const props=getProperties();
- saved.style.display=props.length?'block':'none';
- list.innerHTML=props.map((p,i)=>`
- <div class="property-row">
- <b>${escapeHtml(p.address)}</b><br>
- ${p.acres?escapeHtml(p.acres)+' acres · ':''}${escapeHtml(p.goal)}<br>
- <span class="small">${escapeHtml(p.plans||'No additional plans entered')} · Saved ${new Date(p.created).toLocaleString()}</span>
- </div>`).join('');
-}
-function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
-form.addEventListener('submit',e=>{
- e.preventDefault();
- const props=getProperties();
- props.unshift({
-  address:document.getElementById('address').value.trim(),
-  acres:document.getElementById('acres').value,
-  goal:document.getElementById('goal').value,
-  plans:document.getElementById('plans').value.trim(),
-  created:new Date().toISOString()
- });
- localStorage.setItem(KEY,JSON.stringify(props));
- form.reset();
- success.style.display='block';
- setTimeout(()=>success.style.display='none',3500);
- render();
+const form=document.getElementById('researchForm'), statusBox=document.getElementById('status');
+const results=document.getElementById('results'), grid=document.getElementById('resultGrid'), match=document.getElementById('match'), sources=document.getElementById('sources');
+
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
+function showStatus(msg,error=false){statusBox.style.display='block';statusBox.className='status'+(error?' error':'');statusBox.textContent=msg}
+function val(v){return v===null||v===undefined||v===''?'Not available':v}
+
+form.addEventListener('submit',async e=>{
+ e.preventDefault(); results.style.display='none'; showStatus('Researching the address…');
+ const address=document.getElementById('address').value.trim();
+ try{
+  const g=new URL(GEOCODE); g.searchParams.set('SingleLine',address); g.searchParams.set('f','json'); g.searchParams.set('outFields','*'); g.searchParams.set('maxLocations','5');
+  const gr=await fetch(g); if(!gr.ok) throw new Error('Geocoder unavailable'); const gj=await gr.json();
+  const candidates=(gj.candidates||[]).filter(x=>x.score>=70);
+  if(!candidates.length) throw new Error('No confident New Jersey address match was found. Try the full street address, town and NJ.');
+  const c=candidates[0], x=c.location.x, y=c.location.y;
+  showStatus('Address matched. Looking up the NJ parcel…');
+  const p=new URL(PARCEL);
+  p.searchParams.set('f','json'); p.searchParams.set('where','1=1'); p.searchParams.set('geometry',JSON.stringify({x,y,spatialReference:{wkid:3857}}));
+  p.searchParams.set('geometryType','esriGeometryPoint'); p.searchParams.set('inSR','3857'); p.searchParams.set('spatialRel','esriSpatialRelIntersects'); p.searchParams.set('distance','100'); p.searchParams.set('units','esriSRUnit_Meter'); p.searchParams.set('outFields','*'); p.searchParams.set('returnGeometry','false'); p.searchParams.set('resultRecordCount','5');
+  const pr=await fetch(p); if(!pr.ok) throw new Error('Parcel service unavailable'); const pj=await pr.json();
+  if(pj.error) throw new Error(pj.error.message||'Parcel query failed');
+  const f=pj.features?.[0]?.attributes;
+  if(!f) throw new Error('The address was found, but no statewide parcel record was returned.');
+  statusBox.style.display='none'; results.style.display='block';
+  match.innerHTML='<p><b>Matched address</b><br>'+esc(c.address)+'</p><span class="badge">NJ statewide parcel</span><span class="badge">MOD-IV attributes</span>';
+  const fields=[
+   ['County',f.COUNTY],['Municipality',f.MUN_NAME],['Street address',f.ST_ADDRESS],['City / State',f.CITY_STATE],
+   ['Block',f.PCLBLOCK],['Lot',f.PCLLOT],['Parcel ID (PIN)',f.PAMS_PIN],['Acreage',f.CALC_ACRE],
+   ['Property class',f.PROP_CLASS],['Land value',f.LAND_VAL],['Improvement value',f.IMPRVT_VAL],['Net assessed value',f.NET_VALUE],
+   ['Last-year tax',f.LAST_YR_TX],['Building description',f.BLDG_DESC],['Land description',f.LAND_DESC],
+   ['Deed book',f.DEED_BOOK],['Deed page',f.DEED_PAGE],['Deed date',f.DEED_DATE],['Year constructed',f.YR_CONSTR],['Sale price',f.SALE_PRICE]
+  ];
+  grid.innerHTML=fields.map(a=>'<div class="result"><b>'+esc(a[0])+'</b><strong>'+esc(val(a[1]))+'</strong></div>').join('');
+  sources.innerHTML='<p><b>Official sources used:</b> <a target="_blank" rel="noopener" href="https://www.nj.gov/njgin/edata/parcels/">NJGIN Parcels</a> · <a target="_blank" rel="noopener" href="https://dep.nj.gov/gis/gis-data/">NJDEP GIS</a></p>';
+ }catch(err){showStatus(err.message||'Something went wrong. Please try again.',true)}
 });
-clearBtn.addEventListener('click',()=>{if(confirm('Delete all saved properties on this device?')){localStorage.removeItem(KEY);render()}});
-render();
 </script>
 </body>
 </html>
