@@ -3,109 +3,177 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Land2Homestead | Know Before You Buy</title>
-<meta name="description" content="Land2Homestead helps you research land before you buy it and plan your future homestead.">
+<title>Land2Homestead | Property Research & Homestead Planning</title>
+<meta name="description" content="Land2Homestead helps you research property before you buy and plan what your land can become.">
 <style>
-:root{--ink:#20332b;--green:#315c43;--sage:#e9f0e8;--cream:#faf8f1;--gold:#b8873b;--muted:#66756e;--white:#fff}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--cream);line-height:1.55}
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 6%;background:#fff;border-bottom:1px solid #e8e5dc;position:sticky;top:0;z-index:5}
-.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.03em}.logo span{color:var(--gold)}
-nav a{color:var(--ink);text-decoration:none;margin-left:24px;font-size:.95rem}
-.btn{display:inline-block;padding:13px 19px;border-radius:10px;text-decoration:none;font-weight:700;border:0;cursor:pointer}
-.primary{background:var(--green);color:#fff}.secondary{background:#fff;color:var(--green);border:1px solid #cbd6ce}
-.hero{padding:78px 6% 62px;display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center;max-width:1200px;margin:auto}
-.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.78rem;font-weight:800;color:var(--gold)}
-h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:1.02;letter-spacing:-.055em;margin:12px 0 20px}
-.hero p{font-size:1.15rem;color:var(--muted);max-width:650px}
-.card{background:#fff;border:1px solid #e3e7e0;border-radius:18px;padding:25px;box-shadow:0 12px 35px #20332b0d}
-.searchbox label{font-weight:700;display:block;margin-bottom:8px}.searchbox input{width:100%;padding:15px;border:1px solid #cbd6ce;border-radius:10px;font-size:1rem;margin-bottom:12px}
-.note{font-size:.85rem!important;color:var(--muted)!important;margin:10px 0 0!important}
-section{padding:65px 6%;max-width:1200px;margin:auto}section h2{text-align:center;font-size:2.2rem;letter-spacing:-.04em;margin:0 0 12px}section>p{text-align:center;color:var(--muted);max-width:680px;margin:0 auto 34px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.feature h3{margin:10px 0 6px}.feature p{color:var(--muted);margin:0}.icon{font-size:1.7rem}
-.steps{background:var(--sage);max-width:none}.steps-inner{max-width:1200px;margin:auto}.step{padding:23px;background:#fff;border-radius:15px}.num{font-weight:900;color:var(--gold);font-size:.85rem}
-.report{background:var(--green);color:#fff;max-width:none}.report-inner{max-width:1000px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.report p{color:#dce8df}.report ul{padding-left:20px}
-footer{padding:28px 6%;background:#1d2c25;color:#dce8df;display:flex;justify-content:space-between;gap:20px;font-size:.9rem}
-.modal{display:none;position:fixed;inset:0;background:#0008;z-index:10;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modal .card{width:min(560px,100%);max-height:90vh;overflow:auto}.close{float:right;border:0;background:none;font-size:1.5rem;cursor:pointer}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form-group{margin:13px 0}.form-group label{display:block;font-weight:700;margin-bottom:5px}.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px;border:1px solid #ccd6cf;border-radius:9px;font:inherit}textarea{min-height:90px}
-@media(max-width:800px){.hero,.report-inner{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.hero{padding-top:48px}nav .links{display:none}.form-row{grid-template-columns:1fr}footer{flex-direction:column}}
+:root{--ink:#17351f;--green:#2f6b45;--light:#f4f7f2;--cream:#fbfaf5;--gold:#c79b43;--muted:#66736a;--white:#fff;--border:#dce4dc}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream);line-height:1.55}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 6%;background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:5}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.4px}.logo span{color:var(--green)}
+nav a{color:var(--ink);text-decoration:none;margin-left:22px;font-weight:600;font-size:14px}
+.hero{padding:78px 6% 70px;background:linear-gradient(135deg,#edf4eb,#fbfaf5)}
+.hero-inner{max-width:1050px;margin:auto}
+.eyebrow{color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:12px}
+h1{font-size:clamp(40px,7vw,72px);line-height:1.02;letter-spacing:-2.5px;margin:12px 0 20px;max-width:800px}
+.hero p{font-size:19px;max-width:680px;color:var(--muted)}
+.cta{display:inline-block;margin-top:16px;padding:14px 21px;border-radius:10px;background:var(--green);color:white;text-decoration:none;font-weight:800;border:0;cursor:pointer;font-size:16px}
+.section{padding:70px 6%}.wrap{max-width:1050px;margin:auto}
+h2{font-size:34px;letter-spacing:-1px;margin:0 0 12px}
+.sub{color:var(--muted);max-width:700px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:25px;box-shadow:0 6px 20px rgba(23,53,31,.05)}
+.card h3{margin:8px 0}.icon{font-size:28px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:30px}
+.step{padding:20px;background:var(--light);border-radius:14px}.num{font-weight:900;color:var(--green);font-size:14px}
+.intake{background:var(--ink);color:white;border-radius:20px;padding:34px;margin-top:35px}
+.intake p{color:#d8e3da}
+form{display:grid;gap:14px;margin-top:22px}
+label{font-weight:700;font-size:14px}
+input,select,textarea{width:100%;padding:13px;border-radius:9px;border:1px solid #cbd7cc;font:inherit;background:white;color:#17351f}
+textarea{min-height:110px;resize:vertical}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+button{font:inherit}
+.success{display:none;background:#e9f6eb;color:#17351f;border-radius:10px;padding:14px;margin-top:15px;font-weight:700}
+.saved{margin-top:25px;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--white);display:none}
+.saved h3{margin-top:0}
+.property-row{padding:12px 0;border-top:1px solid var(--border);font-size:14px}
+.small{font-size:13px;color:var(--muted)}
+footer{padding:35px 6%;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+@media(max-width:760px){nav{padding:15px 5%}nav a{margin-left:10px}.hero{padding:58px 5%}.section{padding:55px 5%}.grid,.steps,.form-grid{grid-template-columns:1fr}h1{letter-spacing:-1.5px}}
 </style>
 </head>
 <body>
 <nav>
   <div class="logo">Land<span>2</span>Homestead</div>
-  <div class="links"><a href="#how">How It Works</a><a href="#services">Services</a><a href="#report">Get Started</a></div>
+  <div><a href="#services">Services</a><a href="#how">How It Works</a><a href="#start">Get Started</a></div>
 </nav>
 
-<main>
 <section class="hero">
-  <div>
-    <div class="eyebrow">Research before you buy</div>
-    <h1>Know what your land can become.</h1>
-    <p>Land2Homestead helps future homeowners, homesteaders, and small farmers research a property before they spend their money.</p>
-    <a class="btn primary" href="#report">Research a Property</a>
-    <a class="btn secondary" href="#services" style="margin-left:8px">Explore Services</a>
-  </div>
-  <div class="card searchbox">
-    <div class="eyebrow">Start a property review</div>
-    <h2 style="text-align:left;margin:6px 0 14px">What are you considering?</h2>
-    <label for="address">Property address</label>
-    <input id="address" placeholder="123 Main Street, Town, NJ">
-    <button class="btn primary" style="width:100%" onclick="openForm()">Start Property Review</button>
-    <p class="note">This MVP collects your property and goals. It does not represent a zoning or legal determination.</p>
-  </div>
-</section>
-
-<section id="services">
-  <h2>One place to organize your land research.</h2>
-  <p>Start with the questions that matter before you make an offer.</p>
-  <div class="grid">
-    <div class="card feature"><div class="icon">🗺️</div><h3>Property Due Diligence</h3><p>Organize zoning, wetlands, flood risk, access, utilities, and other pre-purchase questions.</p></div>
-    <div class="card feature"><div class="icon">🏡</div><h3>Home Feasibility</h3><p>Think through a conventional, modular, or manufactured-home plan before committing to land.</p></div>
-    <div class="card feature"><div class="icon">🌱</div><h3>Homestead Planning</h3><p>Plan gardens, blueberries, pollinator plants, chickens, bees, farm products, and more.</p></div>
-  </div>
-</section>
-
-<section class="steps" id="how">
-  <div class="steps-inner">
-    <h2>How it works</h2><p>Simple now. More automated as Land2Homestead grows.</p>
-    <div class="grid">
-      <div class="step"><div class="num">01</div><h3>Enter the property</h3><p>Tell us the address and what you want to do with the land.</p></div>
-      <div class="step"><div class="num">02</div><h3>Build the research checklist</h3><p>Organize the questions and documents needed for due diligence.</p></div>
-      <div class="step"><div class="num">03</div><h3>Make a better decision</h3><p>Use the findings to identify red flags and questions for local officials and professionals.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="report" id="report">
-  <div class="report-inner">
-    <div><div class="eyebrow" style="color:#e2bd7d">Land2Homestead MVP</div><h2 style="text-align:left;color:#fff">Turn a property into a plan.</h2><p>Our first paid product can be a property feasibility and due-diligence report tailored to the buyer's goals.</p><button class="btn" style="background:#fff;color:var(--green)" onclick="openForm()">Request a Report</button></div>
-    <div class="card" style="color:var(--ink)"><strong>A future report can cover:</strong><ul><li>Zoning & permitted uses</li><li>Minimum lot / setback questions</li><li>Wetlands & flood-risk screening</li><li>Water, septic & access questions</li><li>Home and homestead goals</li><li>Red flags & questions to ask</li></ul></div>
-  </div>
-</section>
-</main>
-
-<footer><div><strong>Land2Homestead</strong><br>Reliable. Resourceful. Results.</div><div>© 2026 Land2Homestead · Research tool, not legal advice.</div></footer>
-
-<div class="modal" id="modal">
-  <div class="card">
-    <button class="close" onclick="closeForm()">×</button>
-    <div class="eyebrow">Property intake</div>
-    <h2 style="text-align:left;margin:4px 0 10px">Tell us about the land</h2>
-    <form onsubmit="submitForm(event)">
-      <div class="form-group"><label>Property address</label><input id="faddress" required></div>
-      <div class="form-row">
-        <div class="form-group"><label>Acres</label><input type="number" min="0" step="0.01" placeholder="e.g. 2.5"></div>
-        <div class="form-group"><label>Property goal</label><select><option>Home + homestead</option><option>Farm</option><option>Manufactured home</option><option>Modular home</option><option>Investment</option><option>Other</option></select></div>
-      </div>
-      <div class="form-group"><label>What do you want to do there?</label><textarea placeholder="Example: 2-bedroom home, garden, chickens, blueberries, small farm stand..."></textarea></div>
-      <button class="btn primary" style="width:100%">Save Property</button>
-    </form>
-    <p id="success" style="display:none;color:var(--green);font-weight:700">Property saved for this demo. Next step: connect a database and automated research.</p>
-  </div>
+<div class="hero-inner">
+<div class="eyebrow">Research before you buy</div>
+<h1>Know what your land can become.</h1>
+<p>Land2Homestead helps future landowners research property, understand development considerations, and plan a realistic path from raw land to homestead.</p>
+<a class="cta" href="#start">Research a Property →</a>
 </div>
+</section>
+
+<section class="section" id="services">
+<div class="wrap">
+<h2>What we research</h2>
+<p class="sub">Start with the questions that matter before you spend money on a property.</p>
+<div class="grid">
+<div class="card"><div class="icon">🗺️</div><h3>Property Due Diligence</h3><p>Organize zoning, land-use, wetlands, flood-risk, utilities and other property considerations.</p></div>
+<div class="card"><div class="icon">🏡</div><h3>Home Feasibility</h3><p>Evaluate whether your home and site goals appear compatible with the property.</p></div>
+<div class="card"><div class="icon">🌱</div><h3>Homestead Planning</h3><p>Turn your property goals into a practical checklist for homes, gardens, animals, utilities and more.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="how">
+<div class="wrap">
+<h2>How it works</h2>
+<p class="sub">This version adds a real property-request workflow while keeping the site free to host.</p>
+<div class="steps">
+<div class="step"><div class="num">01 — ENTER</div><b>Tell us about the property</b><p>Address, acreage and what you want to do there.</p></div>
+<div class="step"><div class="num">02 — SAVE</div><b>Your request is saved</b><p>Your browser keeps submitted properties so you can return to them.</p></div>
+<div class="step"><div class="num">03 — RESEARCH</div><b>Review the due-diligence items</b><p>Use the property record as your research checklist.</p></div>
+<div class="step"><div class="num">04 — REPORT</div><b>Build the feasibility report</b><p>Future versions will automate research and paid report delivery.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="start">
+<div class="wrap">
+<h2>Start a property file</h2>
+<p class="sub">Create a property record now. Nothing is sent anywhere yet; this free MVP stores it in your browser so we can build the next stage without a paid backend.</p>
+
+<div class="intake">
+<h2 style="color:white">Property intake</h2>
+<p>Enter one property at a time. You can save multiple properties on this device.</p>
+<form id="propertyForm">
+<div>
+<label for="address">Property address *</label>
+<input id="address" required placeholder="123 Main Street, Town, NJ">
+</div>
+<div class="form-grid">
+<div><label for="acres">Approximate acreage</label><input id="acres" type="number" min="0" step="0.01" placeholder="e.g. 6.21"></div>
+<div><label for="goal">Primary goal</label>
+<select id="goal">
+<option>Buy land for a homestead</option>
+<option>Build a home</option>
+<option>Start a small farm</option>
+<option>Recreational land</option>
+<option>Investment / resale</option>
+<option>Other</option>
+</select></div>
+</div>
+<div><label for="plans">What do you want to do on the property?</label>
+<textarea id="plans" placeholder="Example: 2-bedroom home, garden, chickens, blueberries, small farm stand..."></textarea></div>
+<button class="cta" type="submit">Save Property →</button>
+</form>
+<div class="success" id="success">✓ Property saved to this device.</div>
+</div>
+
+<div class="saved" id="saved">
+<h3>Saved properties</h3>
+<div id="propertyList"></div>
+<button class="cta" id="clearBtn" type="button" style="background:#6b3b3b;margin-top:12px">Clear saved properties</button>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<div class="card">
+<h2>Coming next: Land Feasibility Reports</h2>
+<p>A paid report can eventually combine property research into one organized decision-making document.</p>
+<p><b>Potential products:</b> Basic Property Check • Detailed Due-Diligence Report • Homestead Feasibility Package</p>
+<p class="small">Land2Homestead is a research and planning service, not legal advice. Always verify requirements with the applicable municipality, county, state and other authorities.</p>
+</div>
+</div>
+</section>
+
+<footer><div class="wrap">© 2026 Land2Homestead · Property research & homestead planning · Free MVP</div></footer>
+
 <script>
-function openForm(){const a=document.getElementById('address').value;document.getElementById('faddress').value=a;document.getElementById('modal').classList.add('open')}
-function closeForm(){document.getElementById('modal').classList.remove('open')}
-function submitForm(e){e.preventDefault();document.querySelector('#modal form').style.display='none';document.getElementById('success').style.display='block'}
+const KEY='land2homestead_properties_v2';
+const form=document.getElementById('propertyForm');
+const success=document.getElementById('success');
+const saved=document.getElementById('saved');
+const list=document.getElementById('propertyList');
+const clearBtn=document.getElementById('clearBtn');
+
+function getProperties(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return []}}
+function render(){
+ const props=getProperties();
+ saved.style.display=props.length?'block':'none';
+ list.innerHTML=props.map((p,i)=>`
+ <div class="property-row">
+ <b>${escapeHtml(p.address)}</b><br>
+ ${p.acres?escapeHtml(p.acres)+' acres · ':''}${escapeHtml(p.goal)}<br>
+ <span class="small">${escapeHtml(p.plans||'No additional plans entered')} · Saved ${new Date(p.created).toLocaleString()}</span>
+ </div>`).join('');
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
+form.addEventListener('submit',e=>{
+ e.preventDefault();
+ const props=getProperties();
+ props.unshift({
+  address:document.getElementById('address').value.trim(),
+  acres:document.getElementById('acres').value,
+  goal:document.getElementById('goal').value,
+  plans:document.getElementById('plans').value.trim(),
+  created:new Date().toISOString()
+ });
+ localStorage.setItem(KEY,JSON.stringify(props));
+ form.reset();
+ success.style.display='block';
+ setTimeout(()=>success.style.display='none',3500);
+ render();
+});
+clearBtn.addEventListener('click',()=>{if(confirm('Delete all saved properties on this device?')){localStorage.removeItem(KEY);render()}});
+render();
 </script>
 </body>
 </html>
